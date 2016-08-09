@@ -25,14 +25,10 @@ RUN \
     git clone https://github.com/n1k0/casperjs.git /srv/var/casperjs && \
     ln -s /srv/var/casperjs/bin/casperjs /usr/bin/casperjs && \
     apt-get autoremove -y && \
-    apt-get clean all
-
-RUN \
-    apt-get update && \
-    apt-get upgrade -y && \
     apt-get install -y fonts-ipaexfont-gothic && \
     apt-get autoremove -y && \
     apt-get clean all
+
 
 # Default command
 CMD ["/usr/bin/phantomjs"]
