@@ -11,7 +11,6 @@ MAINTAINER ieee0824
 # Env
 ENV PHANTOMJS_VERSION 2.1.1
 
-
 # Commands
 RUN \
     apt-get update && \
@@ -36,4 +35,7 @@ RUN \
     apt-get clean all
 
 # Default command
-    CMD ["/usr/bin/phantomjs"]
+CMD ["/usr/bin/phantomjs"]
+
+ENTRYPOINT ["/usr/bin/phantomjs"]
+CMD ["--help"]
