@@ -19,8 +19,6 @@ RUN \
     apt-get install -y nodejs npm && \
     npm cache clean && \
     npm install n -g && \
-    n stable && \
-    ln -sf /usr/local/bin/node /usr/bin/node && \
     mkdir -p /srv/var && \
     wget -q --no-check-certificate -O /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && \
     tar -xjf /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C /tmp && \
