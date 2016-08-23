@@ -30,6 +30,10 @@ RUN \
     apt-get autoremove -y && \
     apt-get clean all
 
+RUN \
+    add-apt-repository ppa:chris-lea/node.js && \
+    apt-get install nodejs
+
 
 # Default command
 #ENTRYPOINT ["/usr/bin/phantomjs"]
