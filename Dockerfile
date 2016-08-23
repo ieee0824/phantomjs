@@ -30,6 +30,8 @@ RUN \
     apt-get autoremove -y && \
     apt-get clean all
 
+RUN apt-get install -y curl
+
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
   && for key in \
