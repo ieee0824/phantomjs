@@ -30,7 +30,6 @@ RUN \
     apt-get autoremove -y && \
     apt-get clean all
 
-RUN apt-get install -y curl
 
 # Default command
 #ENTRYPOINT ["/usr/bin/phantomjs"]
