@@ -24,6 +24,7 @@ RUN \
     ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs && \
     git clone https://github.com/n1k0/casperjs.git /srv/var/casperjs && \
     ln -s /srv/var/casperjs/bin/casperjs /usr/bin/casperjs && \
+    git clone https://github.com/ieee0824/sitecapture.git /srv/var/sitecapture && \
     apt-get autoremove -y && \
     apt-get install -y fonts-ipaexfont-gothic && \
     apt-get autoremove -y && \
@@ -31,7 +32,5 @@ RUN \
 
 
 # Default command
-CMD ["/usr/bin/phantomjs"]
-
-ENTRYPOINT ["/usr/bin/phantomjs"]
-CMD ["--help"]
+#ENTRYPOINT ["/usr/bin/phantomjs"]
+#CMD ["--help"]
