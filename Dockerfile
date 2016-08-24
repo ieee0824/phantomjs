@@ -45,5 +45,5 @@ WORKDIR "/srv/var/sitecapture"
 RUN npm install
 
 # Default command
-#ENTRYPOINT ["/usr/bin/phantomjs"]
+ENTRYPOINT ["node /srv/var/sitecapture/index.js --tmp=/tmp"]
 #CMD ["--help"]
