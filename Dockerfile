@@ -5,7 +5,7 @@
 #   docker run cmfatih/phantomjs /usr/bin/casperjs --version
 #   docker run -v `pwd`:/mnt/test cmfatih/phantomjs /usr/bin/phantomjs /mnt/test/test.js
 
-FROM ubuntu:12.04
+FROM ubuntu:16.04
 MAINTAINER ieee0824
 
 # Env
@@ -27,9 +27,22 @@ RUN \
     git clone https://github.com/ieee0824/sitecapture.git /srv/var/sitecapture && \
     apt-get autoremove -y && \
     apt-get install -y fonts-ipaexfont-gothic && \
+    apt-get install -y libcurl3 curl && \
     apt-get autoremove -y && \
     apt-get clean all
 
+
+# install node.js
+RUN apt-get install -y nodejs npm
+RUN npm cache clean
+RUN npm install n -g
+RUN n stable
+RUN ln -sf /usr/local/bin/node /usr/bin/node
+RUN apt-get purge -y nodejs npm
+
+# npm install
+WORKDIR "/srv/var/sitecapture"
+RUN npm install
 
 # Default command
 #ENTRYPOINT ["/usr/bin/phantomjs"]
