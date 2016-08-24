@@ -45,5 +45,5 @@ WORKDIR "/srv/var/sitecapture"
 RUN npm install
 
 # Default command
-ENTRYPOINT ["node /srv/var/sitecapture/index.js --tmp=/tmp"]
-#CMD ["--help"]
+ENTRYPOINT ["node", "/srv/var/sitecapture/index.js", "--tmp=/tmp"]
+CMD ["-h"]
